@@ -1,0 +1,23 @@
+{
+  "name": "discordjs-handler",
+  "version": "1.0.0",
+  "description": "An event and command handler for discord bots made with discord.js (v12)",
+  "homepage": "https://github.com/DeathHound6/discordjs-handler",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.4.0",
+    "require-all": "^3.0.0",
+    "fs": "^0.0.2"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "https://github.com/DeathHound6/discordjs-handler",
+    "bugs": "https://github.com/DeathHound6/discordjs-handler/issues"
+  },
+  "license": "MIT"
+}

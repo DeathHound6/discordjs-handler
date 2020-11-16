@@ -11,7 +11,7 @@ class MessageEvent extends Event {
       .split(/ +/g);
     const commandName = args.shift().toLowerCase();
 
-    let command = this.client.commands.find(
+    let command = this.client.registry.commands.find(
       cmd => cmd.name == commandName || cmd.aliases.includes(commandName)
     );
     if (!command) return;

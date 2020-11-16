@@ -10,7 +10,7 @@ class MessageUpdateEvent extends Event {
     if (!newMsg.content) return;
     const args = newMsg.content.slice(newMsg.guild ? newMsg.guild.prefix.length : newMsg.client.defaultPrefix.length).split(/ +/g);
     const commandName = args.shift().toLowerCase();
-    let command = this.commands.find(
+    let command = this.client.registry.commands.find(
       cmd => cmd.name == commandName || cmd.aliases.includes(commandName)
     );
     if (!command) return;

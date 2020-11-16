@@ -7,7 +7,7 @@ class MessageEvent extends Event {
   async run(msg) {
     if (!msg.content) return;
     const args = msg.content
-      .slice(msg.guild ? msg.guild.prefix.length : msg.client.defaultPrefix)
+      .slice(msg.guild ? msg.guild.prefix.length : msg.client.defaultPrefix.length)
       .split(/ +/g);
     const commandName = args.shift().toLowerCase();
 

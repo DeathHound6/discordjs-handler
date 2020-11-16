@@ -8,7 +8,7 @@ class MessageUpdateEvent extends Event {
   async run(oldMsg, newMsg) {
     if (Date.now - newMsg.createdTimestamp > 30) return;
     if (!newMsg.content) return;
-    const args = newMsg.content.slice(newMsg.guild.prefix.length).split(/ +/g);
+    const args = newMsg.content.slice(newMsg.guild ? newMsg.guild.prefix.length : newMsg.client.defaultPrefix.length).split(/ +/g);
     const commandName = args.shift().toLowerCase();
     let command = this.commands.find(
       cmd => cmd.name == commandName || cmd.aliases.includes(commandName)
